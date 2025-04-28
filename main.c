@@ -13,13 +13,13 @@ int main()
     while (1)
     {
         
-        pedirJogada(ori, dest, &linOri, &colOri, &linDest, &colDest);
+        pedirJogada(ori, dest, &colOri, &linOri, &colDest, &linDest);
         if(ori[0] == '0' && ori[1] == '0' && dest[0] == '0' && dest[1] == '0'){
             printf("Jogo encerrado");
             break;
         }
-        moverPeca(tabuleiro, linOri, colOri, linDest, colDest); // LINHA primeiro, depois COLUNA
         system("cls");
+        moverPeca(tabuleiro, linOri, colOri, linDest, colDest); 
         mostrarTabuleiro(tabuleiro);
     }
     
