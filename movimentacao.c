@@ -6,7 +6,7 @@ void moverPeca(char tabuleiro[8][8], int linOri, int colOri, int linDest, int co
     /*linOri = linha origem, colOri = coluna origem, linDest = linha destino, colDest = coluna destino*/
     char peca = tabuleiro[linOri][colOri];
     tabuleiro[linDest][colDest] = peca;
-    tabuleiro[linOri][colOri] = '.';
+    tabuleiro[linOri][colOri] = ' ';
 
     printf("Movendo de (%d, %d) para (%d, %d)\n", linOri, colOri, linDest, colDest);
 }
@@ -16,7 +16,14 @@ void pedirJogada(char ori[3], char dest[3], int *colOri, int *linOri, int *colDe
 {
     
     scanf("%s %s", ori, dest);
-    *colOri = ori[0] - 'a';
+    if(ori[0]<'h'){
+        *colOri = ori[0] - 'a';
+    }
+    else {
+        printf("Casa inicial invalida");
+        scanf("ENTER para continuar%s");
+    }
+    
     *linOri = 8 - (ori[1] - '0');
     *colDest = dest[0] - 'a';
     *linDest = 8 - (dest[1] - '0');

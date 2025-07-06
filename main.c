@@ -18,7 +18,7 @@ int main()
             printf("Jogo encerrado");
             break;
         }
-        system("cls");
+        //system("cls");
         moverPeca(tabuleiro, linOri, colOri, linDest, colDest); 
         mostrarTabuleiro(tabuleiro);
     }
